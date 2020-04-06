@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "local": "nodemon -r esm src/index.js"
+    "local": "nodemon -r esm -e js,mjs,json,ejs src/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^3.0.2",
     "esm": "^3.2.25",
     "express": "^4.17.1"
   }
