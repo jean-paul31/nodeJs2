@@ -2,32 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello, this is a meteo display</title>
     <%- include ('../partials/mainCss.ejs') %>
-    <title>Document</title>
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-17">
-                <h1>meteo pour <%= meteoCity.city_info.name %> : <%= meteoCity.city_info.country %></h1>
-                <ul>
-                    <% for(let i = 0; i < 5; i++){ 
-                        for(let j = 0; j < 24; j++){ %>
-                    <li> 
-                        <span>
-                            <%= meteoCity[`fcst_day_${i}`].date %> 
-                            <%= `${j}H00` %> 
-                            <%= meteoCity[`fcst_day_${i}`].hourly_data[`${j}H00`].CONDITION  %> : 
-                        </span> 
-                        <img src="<%= meteoCity[`fcst_day_${i}`].hourly_data[`${j}H00`].ICON  %>" alt="" srcset="">
-                            <%= meteoCity[`fcst_day_${i}`].hourly_data[`${j}H00`].TMP2m + '°C'  %>
-                    </li>
-                    <% }
-                }; %>
-                </ul>
-            </div>
-        </div>
-    </div>
+<h1> Meteo pour <%= `${meteoCity.city_info.name},  ${meteoCity.city_info.country}` %></h1>
+<ul>
+    <% for (let i = 0; i<5; i++) { %>
+        <li><%- include ('../partials/meteoDay.ejs', { day: meteoCity[`fcst_day_${i}`] }) %></li>
+    <% } %>
+</ul>
 </body>
 </html>
