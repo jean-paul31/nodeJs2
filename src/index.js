@@ -1,11 +1,13 @@
 import express from "express";
 import routes from './routes';
+import bodyParser from "body-parser";
 
 const app = express();
 const port = 3000;
 app.use("/", routes({ }));
 app.set('view engine', 'ejs');
 app.use('/static', express.static('src/public'));
+app.use(bodyParser.json({}));
 app.listen(port, () => {
                     console.log(`Exemple app listening on port ${port} !`)
                     });

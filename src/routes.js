@@ -11,6 +11,10 @@ const api = ({}) => {
     routes.post('/user', userController.postUser);
     routes.put('/user', userController.putUser);
     routes.delete('/user', userController.deleteUser);
+    routes.get('/user/ :userId', userController.getUser);
+    routes.post('/user/ :userId', userController.postUser);
+    routes.put('/user/ :userId', userController.putUser);
+    routes.delete('/user/ :userId', userController.deleteUser);
     return routes
 };
 
