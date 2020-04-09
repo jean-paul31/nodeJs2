@@ -14,8 +14,17 @@
                 <ul>
                     <% for(let i = 0; i < 5; i++){ 
                         for(let j = 0; j < 24; j++){ %>
-                    <li> <%= meteoCity[`fcst_day_${i}`].date %> <%= `${j}H00` %> <%= meteoCity[`fcst_day_${i}`].hourly_data[`${j}H00`].CONDITION  %> <img src="<%= meteoCity[`fcst_day_${i}`].hourly_data[`${j}H00`].ICON  %>" alt="" srcset=""></li>
-                    <% }}; %>
+                    <li> 
+                        <span>
+                            <%= meteoCity[`fcst_day_${i}`].date %> 
+                            <%= `${j}H00` %> 
+                            <%= meteoCity[`fcst_day_${i}`].hourly_data[`${j}H00`].CONDITION  %> : 
+                        </span> 
+                        <img src="<%= meteoCity[`fcst_day_${i}`].hourly_data[`${j}H00`].ICON  %>" alt="" srcset="">
+                            <%= meteoCity[`fcst_day_${i}`].hourly_data[`${j}H00`].TMP2m + '°C'  %>
+                    </li>
+                    <% }
+                }; %>
                 </ul>
             </div>
         </div>
