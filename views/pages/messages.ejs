@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include ('../partials/mainCss.ejs') %>
+    <title>database</title>
+</head>
+<body>
+    <h1>Messages</h1>
+    <ul>
+        <% messages.forEach((message) => { 
+            if(message.id_sender === message.id_receiver){%>
+        <li>
+            <h2>messages envoyés</h2>
+            <%= message.id %> 
+            <%= message.title %> 
+            <%= message.content %> 
+            <%= message.created_at %> 
+        </li>
+        <% } else { %>
+            <li>
+                <h2>messages reçus</h2>
+                <%= message.id %> 
+                <%= message.title %> 
+                <%= message.content %> 
+                <%= message.created_at %> 
+            </li>
+        } }); %>
+    </ul>
+</body>
+</html>
