@@ -10,23 +10,23 @@
     <h1>Messages</h1>
     <ul>
         <% messages.forEach((message) => { 
-            if(message.id_sender === message.id_receiver){%>
+            if(userId == message.id_receiver){%>
         <li>
             <h2>messages envoyés</h2>
             <%= message.id %> 
             <%= message.title %> 
-            <%= message.content %> 
-            <%= message.created_at %> 
+            (<%= message.content %>), 
+            (<%= message.created_at %> )
         </li>
         <% } else { %>
             <li>
                 <h2>messages reçus</h2>
                 <%= message.id %> 
                 <%= message.title %> 
-                <%= message.content %> 
-                <%= message.created_at %> 
+                (<%= message.content %> )
+                (<%= message.created_at %> )
             </li>
-        } }); %>
+       <% } }); %>
     </ul>
 </body>
 </html>

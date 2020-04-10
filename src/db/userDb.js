@@ -12,10 +12,16 @@ const insertUser = async (name, password) =>{
     const connexion = new DbConnection();
     return await connexion.performQuery("INSERT INTO users (name, password) VALUES (?, ?);", [name, password]);
 };
+const deleteUser = async (userId) =>{
+    const connexion = new DbConnection();
+    return await connexion.performQuery("DELETE FROM users WHERE id=?", [userId]);
+};
+
 
 
 export default{
     getUsers,
     getUser,
-    insertUser
+    insertUser,
+    deleteUser
 }
