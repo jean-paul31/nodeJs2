@@ -3,7 +3,7 @@ import userDb from "../db/userDb";
 
 const getUsers = async (req, res) => {
     const result = await userDb.getUsers();
-    res.status(200).render("pages/user", { users: result.rows});
+    res.status(200).render("pages/users", { users: result.rows});
 }
 const getUser = (req, res) => {
     const { userId } = req.params;
