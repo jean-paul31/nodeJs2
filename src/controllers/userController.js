@@ -1,3 +1,10 @@
+import userDb from "../db/userDb";
+
+
+const getUsers = async (req, res) => {
+    const result = await userDb.getUsers();
+    res.status(200).render("pages/user", { users: result.rows});
+}
 const getUser = (req, res) => {
     const { userId } = req.params;
     const { search, name } = req.query;
@@ -24,6 +31,7 @@ const deleteUser = (req, res) => {
 
 
 export default{
+    getUsers,
     getUser,
     postUser,
     putUser,

@@ -9,6 +9,8 @@ const api = () => {
     routes.get('/', helloController.hello);
     routes.get('/templatedPage', helloController.templatedPage);
 
+    routes.get('/users', userController.getUsers);
+
     routes.get('/user/:userId', userController.getUser);
     routes.post('/user/:userId', userController.postUser);
     routes.put('/user/:userId', userController.putUser);
