@@ -1,4 +1,4 @@
-import meteoService from"../service/meteo";
+import meteoService from'../service/meteo.js';
 
 const hello = (req, res) => {
     res.status(200).send("hello world !");

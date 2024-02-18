@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "local": "nodemon -r esm -e js,mjs,json,ejs src/index.js"
@@ -16,8 +17,8 @@
     "esm": "^3.2.25",
     "express": "^4.18.2",
     "mysql": "^2.18.1",
-    "nodemon": "^2.0.22",
+    "nodemon": "^3.0.3",
     "request": "^2.88.2",
-    "request-promise-native": "^1.0.8"
+    "request-promise-native": "^0.0.0"
   }
 }

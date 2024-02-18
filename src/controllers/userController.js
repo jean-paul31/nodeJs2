@@ -1,4 +1,4 @@
-import userDb from "../db/userDb";
+import userDb from '../db/userDb.js';
 
 
 const getUsers = async (req, res) => {
